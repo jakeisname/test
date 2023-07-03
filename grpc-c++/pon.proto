@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pon;
+
+service PonService {
+    rpc OnuActivate(Onu) returns(PonReply){}
+    rpc OnuDeactivate(Onu) returns(Empty){}
+    rpc OnuIndication(Onu) returns(stream Onu){}
+}
+
+message Onu {
+    int32 portid = 1;
+    int32 onuid = 2;
+}
+
+message PonReply {
+    string message = 1;
+}
+
+message Empty {}
+

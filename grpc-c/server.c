@@ -139,13 +139,9 @@ int main (int argc, char **argv)
 
     pon__pon_service__service_init(server);
 
-    gpr_log(GPR_ERROR, "Jake, 1.");
     grpc_c_server_start(server);
 
-    gpr_log(GPR_ERROR, "Jake, 2.");
     grpc_c_server_wait(server);
-
-    gpr_log(GPR_ERROR, "Jake, 3.");
 }
 
 
